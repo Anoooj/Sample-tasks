@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replace</title>
+    <script>
+        function replaceSpaces(sentence) {
+          return sentence.split(' ').join('--');
+        }
+    
+        function runReplacement() {
+          const input = document.getElementById("sentenceInput").value;
+          const modifiedSentence = replaceSpaces(input);
+          console.log("Modified Sentence:", modifiedSentence);
+          document.getElementById("result").textContent = modifiedSentence;
+        }
+      </script>
+</head>
+<body>
+    <label for="sentenceInput">Enter a sentence:</label>
+  <input type="text" id="sentenceInput">
+  <button onclick="runReplacement()">Replace</button>
+  <p id="result"></p>
+</body>
+</html>

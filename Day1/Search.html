@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <script>
+        function searchNumber(A, number) {
+          for (let i = 0; i < A.length; i++) {
+            if (A[i] === number) {
+              return i;
+            }
+          }
+          return -1; // Return -1 if number is not found
+        }
+    
+        function runSearch() {
+          const input = document.getElementById("arrayInput").value;
+          const A = input.split(",").map(Number);
+          const number = parseInt(document.getElementById("numberInput").value);
+          const position = searchNumber(A, number);
+          console.log("Position:", position);
+          document.getElementById("result").textContent = position >= 0 ? "Found at position: " + position : "Number not found";
+        }
+      </script>    
+</head>
+<body>
+  <label for="arrayInput">Enter numbers (comma-separated):</label>
+  <input type="text" id="arrayInput">
+  <label for="numberInput">Enter a number:</label>
+  <input type="number" id="numberInput">
+  <button onclick="runSearch()">Search</button>
+  <p id="result"></p>
+</body>
+</html>

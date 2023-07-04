@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckUnique</title>
+    <script>
+    function checkUniqueCharacters(str) {
+        const charSet = new Set();
+  
+        for (let i = 0; i < str.length; i++) {
+          const char = str[i];
+          if (charSet.has(char)) {
+            return false;
+          }
+          charSet.add(char);
+        }
+  
+        return true;
+      }
+  
+      function runCheck() {
+        const input = document.getElementById("stringInput").value;
+        const isUnique = checkUniqueCharacters(input);
+        console.log("All characters are unique:", isUnique);
+        document.getElementById("result").textContent = isUnique ? "All characters are unique" : "Duplicate characters found";
+      }
+    </script>
+</head>
+<body>
+    <label for="stringInput">Enter a string:</label>
+  <input type="text" id="stringInput">
+  <button onclick="runCheck()">Check</button>
+  <p id="result"></p>
+</body>
+</html>

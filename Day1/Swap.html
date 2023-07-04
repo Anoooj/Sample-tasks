@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swap</title>
+<script>
+    function swapNumbers() {
+        let a = parseInt(document.getElementById("numberInputA").value);
+        let b = parseInt(document.getElementById("numberInputB").value);
+  
+        a = a + b;
+        b = a - b;
+        a = a - b;
+  
+        document.getElementById("resultA").textContent = "Number A: " + a;
+        document.getElementById("resultB").textContent = "Number B: " + b;
+      }
+    </script>
+</head>
+<body>
+    <label for="numberInputA">Enter number A:</label>
+    <input type="number" id="numberInputA">
+    <br>
+    <label for="numberInputB">Enter number B:</label>
+    <input type="number" id="numberInputB">
+    <br>
+    <button onclick="swapNumbers()">Swap</button>
+    <br>
+    <p id="resultA"></p>
+    <p id="resultB"></p>   
+</body>
+</html>
