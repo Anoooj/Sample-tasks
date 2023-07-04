@@ -9,7 +9,7 @@
           const string = document.getElementById("stringInput").value.toLowerCase();
           const reversedString = string.split('').reverse().join('');
     
-          if (string === reversedString) {
+          if (string == reversedString) {
             document.getElementById("result").textContent = "The string is a palindrome.";
           } else {
             document.getElementById("result").textContent = "The string is not a palindrome.";
